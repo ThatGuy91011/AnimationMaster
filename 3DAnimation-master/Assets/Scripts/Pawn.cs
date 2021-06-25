@@ -61,7 +61,11 @@ public class Pawn : MonoBehaviour
         anim.SetFloat("Forward", animationDirection.z * speed);
         anim.SetFloat("Right", animationDirection.x * speed);
 
-        RotateToMousePointer();
+        if (cam != null)
+        {
+            RotateToMousePointer();
+        }
+
 
         // If the player's health is greater than the max health...
         if (currentHealth > maxHealth)
