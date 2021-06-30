@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject bullet;
 
-    public float speed;
+    public float bulletSpeed;
 
     public bool isRespawning;
 
@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
             //New rigidbody based on prefab
             Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
             //Set the velocity of the bullet to the relative forward of the bullet spawn object
-            instBulletRigidbody.velocity = transform.forward * speed;
+            instBulletRigidbody.velocity = transform.forward * bulletSpeed;
             //Timer for bullet despawn
             StartCoroutine(bulletDespawn(instBullet));
         }

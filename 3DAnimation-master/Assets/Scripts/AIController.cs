@@ -52,5 +52,12 @@ public class AIController : MonoBehaviour
         agent.velocity = anim.velocity;
     }
     **/
+
+    }
+    public Transform GetFollowTarget()
+    {
+        Transform followTarget;
+        followTarget = FindObjectOfType<PlayerController>().pawn.transform;
+        return followTarget;
     }
 }
