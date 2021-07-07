@@ -9,7 +9,10 @@ public class NewWeaponPickup : MonoBehaviour
 
     // Array to hold all the guns
     public WeaponClass[] weapons;
-
+    public void Update()
+    {
+        Debug.Log(player.transform.forward);
+    }
     public void OnTriggerEnter(Collider other)
     {
         // Three guns created so far
@@ -38,7 +41,8 @@ public class NewWeaponPickup : MonoBehaviour
             Destroy(GameObject.FindWithTag("CurrentWeapon"));
             player.GetComponent<Pawn>().weapon = weapons[1];
             other.transform.SetParent(player.transform);
-            other.transform.localPosition = new Vector3(.265f, 1.149f, .494f);
+            other.transform.localPosition = other.transform.forward;
+            other.transform.localRotation = new Quaternion(0, 0, 0, 0);
             other.tag = "CurrentWeapon";
         }
 
