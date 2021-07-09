@@ -20,6 +20,7 @@ public abstract class WeaponClass : MonoBehaviour
     // Array to hold however many/few bullets the gun can shoot
     public GameObject[] bulletSpawn;
 
+    public bool isDead;
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -29,20 +30,23 @@ public abstract class WeaponClass : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (!isDead)
         {
-            isTriggerDown = true;
-        }
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                isTriggerDown = true;
+            }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            isTriggerDown = false;
-        }
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                isTriggerDown = false;
+            }
 
-        if (isTriggerDown)
-        {
-            OnTriggerPull();
-            isTriggerDown = false;
+            if (isTriggerDown)
+            {
+                OnTriggerPull();
+                isTriggerDown = false;
+            }
         }
     }
 

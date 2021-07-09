@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public int runSpeed;
     public int walkSpeed;
 
+    public bool isDead;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +46,12 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Forward", animationDirection.z * speed);
         anim.SetFloat("Right", animationDirection.x * speed);
 
-        if (cam != null)
+        if (!isDead)
         {
-            RotateToMousePointer();
+            if (cam != null)
+            {
+                RotateToMousePointer();
+            }
         }
     }
     /// <summary>
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void RotateToMousePointer()
     {
+        
         //Find game plane
         Plane gamePlane = new Plane(Vector3.up, transform.position);
 

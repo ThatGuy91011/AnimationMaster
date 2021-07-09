@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Pickups\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\Pickups\Pickup.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Ragdoll.cs" />
     <Compile Include="Assets\Scripts\RandomGun.cs" />
     <Compile Include="Assets\Scripts\Rifle.cs" />
     <Compile Include="Assets\Scripts\ShootBullet.cs" />
